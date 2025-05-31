@@ -8,9 +8,10 @@ import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import { ChatbaseBubble } from './components/ChatbaseBubble';
 import WebTalk from './pages/WebTalk';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 
 function App() {
+  const location = useLocation();
   return (
     <BrowserRouter>
       <Routes>
@@ -23,7 +24,7 @@ function App() {
             <Benefits />
             <FAQ />
             <Footer />
-            <ChatbaseBubble />
+            {location.pathname !== "/webtalk" && <ChatbaseBubble />}
           </div>
         } />
         <Route path="/webtalk" element={<WebTalk />} />

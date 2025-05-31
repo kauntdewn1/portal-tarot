@@ -1,4 +1,3 @@
-import React from "react";
 
 const chatbaseUrl = import.meta.env.VITE_CHATBASE_IFRAME_URL;
 
